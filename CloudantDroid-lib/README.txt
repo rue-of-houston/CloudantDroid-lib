@@ -99,7 +99,8 @@
  To use the built-in network receiver add this code to your activity:
 
 	CouchReceiver receiver = new CouchReceiver(this);
-	this.registerReceiver(receiver, CouchReceiver.getFilter());
+	IntentFilter filter = CouchReceiver.getFilter();
+	this.registerReceiver(receiver, filter);
 
 
  Now you can check the status boolean of the receiver when you need to verify if there is
@@ -111,6 +112,28 @@
  You can similarly receive the type of connection like so:
 
 	String networkType = receiver.getType();
+	
+	
+	CouchReceiver example:
+	
+	if (receiver != null && receiver.getStatus() == true)
+		{
+			Toast toast = Toast.makeText(this, receiver.getType() + " Ready!", Toast.LENGTH_SHORT);
+			
+			if (toast != null)
+			{
+				toast.show();
+			}
+		}
+		else
+		{
+			Toast toast = Toast.makeText(this, receiver.getType(), Toast.LENGTH_SHORT);
+			
+			if (toast != null)
+			{
+				toast.show();
+			}
+		}
 
 
 

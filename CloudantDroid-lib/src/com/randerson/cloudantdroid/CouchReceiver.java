@@ -32,6 +32,7 @@
 
 package com.randerson.cloudantdroid;
 
+import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -46,51 +47,78 @@ public final class CouchReceiver extends BroadcastReceiver {
 	// the default connection status and type for the receiver
 	boolean NETWORK_STATUS = false;
 	String NETWORK_TYPE = "No Connection";
-	Context CONTEXT = null;
 	
 	// constructor
-	public CouchReceiver(Context context)
+	public CouchReceiver(Activity context)
 	{
-		CONTEXT = context;
+		try {
+			ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+			NetworkInfo network = cm.getActiveNetworkInfo();
+		
+			// check the network status is connected
+			if (network.isConnected() == true)
+			{
+				// set the bool to true
+				NETWORK_STATUS = true;
+				
+				// set the network type
+				NETWORK_TYPE = network.getTypeName() + " Connection";
+			}
+			else
+			{
+				// set the bool to false
+				NETWORK_STATUS = false;
+				
+				// set the network type to none
+				NETWORK_TYPE = "No Connection";
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	};
 	
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		
-		ConnectivityManager cm = (ConnectivityManager) CONTEXT.getSystemService(Context.CONNECTIVITY_SERVICE);
-		NetworkInfo network = cm.getActiveNetworkInfo();
+		try {
+			ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+			NetworkInfo network = cm.getActiveNetworkInfo();
 		
-		// check the network status is connected
-		if (network.isConnected())
-		{
-			// set the bool to true
-			this.NETWORK_STATUS = true;
-			
-			// set the network type
-			this.NETWORK_TYPE = network.getTypeName();
+			// check the network status is connected
+			if (network.isConnected() == true)
+			{
+				// set the bool to true
+				NETWORK_STATUS = true;
+				
+				// set the network type
+				NETWORK_TYPE = network.getTypeName();
+			}
+			else
+			{
+				// set the bool to false
+				NETWORK_STATUS = false;
+				
+				// set the network type to none
+				NETWORK_TYPE = "No Connection";
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-		else
-		{
-			// set the bool to false
-			this.NETWORK_STATUS = false;
-			
-			// set the network type to none
-			this.NETWORK_TYPE = "No Connection";
-		}
+		
 	} 
 	
 	// method for returning the network status
 	public boolean getStatus()
 	{
 		// return the network status from the receiver;
-		return this.NETWORK_STATUS;
+		return NETWORK_STATUS;
 	}
 	
 	// method for returning the network type
 	public String getType()
 	{
 		// return the network type
-		return this.NETWORK_TYPE;
+		return NETWORK_TYPE;
 	}
 	
 	// Session method for getting an intent filter for registration along with the receiver
