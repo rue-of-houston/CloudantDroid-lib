@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>7C6EF464-D482-4C69-8C17-8AF8F0A1085B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>AppNetClient</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>21CF8D09-A1DD-43AC-A9EE-2C142CE509B4</key>
+		<string>https://github.com/rue-of-houston/AppNetClient.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>AppNetClient/AppNetClient.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>21CF8D09-A1DD-43AC-A9EE-2C142CE509B4</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/rue-of-houston/AppNetClient.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>21CF8D09-A1DD-43AC-A9EE-2C142CE509B4</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>21CF8D09-A1DD-43AC-A9EE-2C142CE509B4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>AppNetClient</string>
+		</dict>
+	</array>
+</dict>
+</plist>
